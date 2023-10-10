@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "d5f0a49a-bb57-4282-bea2-986ca1f82d9a",
+		"name": "Squash_Update_Test_Case_Status",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13009293"
+	},
+	"item": [
+		{
+			"name": "squash edit status",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"_type\" : \"execution\",\r\n  \"execution_status\" : \"{{status}}\",\r\n  \"comment\": \"{{report}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/squash/api/rest/latest/executions/{{id_execution}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"squash",
+						"api",
+						"rest",
+						"latest",
+						"executions",
+						"{{id_execution}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

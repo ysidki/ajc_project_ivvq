@@ -1,0 +1,416 @@
+{
+	"info": {
+		"_postman_id": "806a5afc-5caa-4e8e-ba04-f7407543ca67",
+		"name": "Squash_Get_Test_Cases",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13009293"
+	},
+	"item": [
+		{
+			"name": "Get Campain test plan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response = JSON.parse(responseBody)\r",
+							"let list = []\r",
+							"let count = response.test_plan.length - 1\r",
+							"\r",
+							"console.log(response.test_plan.length)\r",
+							"\r",
+							"while(count>=0) {\r",
+							"        list.push(response.test_plan[count][\"referenced_test_case\"].id)\r",
+							"        pm.environment.set(\"list_test_cases\", list)\r",
+							"       \r",
+							"        count = count - 1 \r",
+							"    }"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/rest/latest/campaigns/{{id_campaign}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"rest",
+						"latest",
+						"campaigns",
+						"{{id_campaign}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create iteration",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response = JSON.parse(responseBody)\r",
+							"postman.setEnvironmentVariable(\"id_iteration\", response.id)"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var moment = require('moment')\r",
+							"pm.environment.set('currentDate', moment().format((\"DD/MM/YYYY\")))\r",
+							"pm.environment.set('currentHour', moment().format((\"HH:mm:ssss a\")));\r",
+							"\r",
+							"// pm.sendRequest(\"http://worldtimeapi.org/api/timezone/Europe/Paris\", function (err, res) {\r",
+							"//     pm.environment.set(\"currentHour\", res.json().datetime.split('T')[1].split('+')[0].split('.')[0]);\r",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"_type\" : \"iteration\",\r\n  \"name\" : \"{{currentHour}}\",\r\n  \"reference\" : \"{{env_build}}-{{currentDate}}\",\r\n  \"description\" : \"<p>A new iteration crated with Squash API : {{currentDate}} - {{currentHour}}</p>\",\r\n  \"parent\" : {\r\n    \"_type\" : \"campaign\",\r\n    \"id\" : \"{{id_campaign}}\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/rest/latest/campaigns/{{id_campaign}}/iterations",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"rest",
+						"latest",
+						"campaigns",
+						"{{id_campaign}}",
+						"iterations"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create test plan iteration",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"let list_test_cases = pm.environment.get(\"list_test_cases\")\r",
+							"\r",
+							"let i = parseInt(pm.environment.get('test_created'))\r",
+							"\r",
+							"\r",
+							"while(i) {\r",
+							"    list_test_cases.pop()\r",
+							"    i = i-1\r",
+							"}\r",
+							"\r",
+							"pm.variables.set('test_case_counter', list_test_cases.length - 1)\r",
+							"\r",
+							"console.log(pm.variables.get('test_case_counter'))\r",
+							"\r",
+							"pm.variables.set(\"id_test_case\", list_test_cases[pm.variables.get(\"test_case_counter\")])\r",
+							"pm.environment.set('test_created', (parseInt(pm.environment.get('test_created'))+1).toString())\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let list_test_cases = pm.environment.get(\"list_test_cases\")\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"if (pm.variables.get('test_case_counter') > 0){\r",
+							"    postman.setNextRequest(pm.info.requestId);\r",
+							"} else {\r",
+							"    pm.environment.set(\"test_created\", \"0\")\r",
+							"}\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"_type\" : \"iteration-test-plan-item\",\r\n  \"test_case\" : {\r\n    \"_type\" : \"test-case\",\r\n    \"id\" : {{id_test_case}}\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/rest/latest/iterations/{{id_iteration}}/test-plan",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"rest",
+						"latest",
+						"iterations",
+						"{{id_iteration}}",
+						"test-plan"
+					]
+				},
+				"description": "create test plan iteration"
+			},
+			"response": []
+		},
+		{
+			"name": "create automted suite from iteration",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response = JSON.parse(responseBody)\r",
+							"postman.setEnvironmentVariable(\"id_automated_suite\", response.id)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "iterationId",
+							"value": "{{id_iteration}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/rest/latest/automated-suite-utils/from-iteration",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"rest",
+						"latest",
+						"automated-suite-utils",
+						"from-iteration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get executions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response = JSON.parse(responseBody)\r",
+							"\r",
+							"let len = response[\"_embedded\"][\"automated-execution-extenders\"].length\r",
+							"\r",
+							"let count = len\r",
+							"\r",
+							"let id_executions = \"\"\r",
+							"\r",
+							"while(count) {\r",
+							"    if(count == 1){\r",
+							"        id_executions = id_executions + response[\"_embedded\"][\"automated-execution-extenders\"][count-1][\"execution\"][\"id\"]\r",
+							"    } else {\r",
+							"        id_executions = id_executions + response[\"_embedded\"][\"automated-execution-extenders\"][count-1][\"execution\"][\"id\"] + ','\r",
+							"    }\r",
+							"    \r",
+							"\r",
+							"    count = count - 1\r",
+							"}\r",
+							"\r",
+							"let string \r",
+							"\r",
+							"postman.setEnvironmentVariable(\"id_executions\", id_executions)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/rest/latest/automated-suites/{{id_automated_suite}}/executions",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"rest",
+						"latest",
+						"automated-suites",
+						"{{id_automated_suite}}",
+						"executions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get execution info",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response = JSON.parse(responseBody)\r",
+							"let id_executions = pm.environment.get(\"id_executions\").split(',')\r",
+							"\r",
+							"pm.environment.set(\"list_tests_to_execute\", pm.environment.get(\"list_tests_to_execute\") + (id_executions[pm.variables.get(\"test_executed\")]+ \":\" + response.name ))\r",
+							"\r",
+							"pm.environment.set(\"test_executed\", parseInt(pm.environment.get(\"test_executed\")) + 1)\r",
+							"\r",
+							"if(parseInt(pm.environment.get(\"test_executed\")) != id_executions.length) {\r",
+							"    pm.environment.set(\"list_tests_to_execute\",  pm.variables.get(\"list_tests_to_execute\") + \",\")\r",
+							"    postman.setNextRequest(pm.info.requestId)\r",
+							"} else {\r",
+							"    pm.environment.set(\"test_executed\", 0)\r",
+							"    console.log(\"list_tests_to_execute = [\" + pm.environment.get(\"list_tests_to_execute\") + \"]\")\r",
+							"}\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"let id_executions = pm.environment.get(\"id_executions\").split(',')\r",
+							"\r",
+							"\r",
+							"pm.variables.set(\"current_id_execution\", id_executions[pm.environment.get(\"test_executed\")])\r",
+							"\r",
+							"console.log(pm.variables.get(\"current_id_execution\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/rest/latest/executions/{{current_id_execution}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"rest",
+						"latest",
+						"executions",
+						"{{current_id_execution}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

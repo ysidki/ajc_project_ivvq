@@ -1,0 +1,619 @@
+{
+	"info": {
+		"_postman_id": "a7bb1ce5-561b-462b-9dc4-32ef2e6535e8",
+		"name": "ParaBank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13009293"
+	},
+	"item": [
+		{
+			"name": "Login curl",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "${{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "parabank.parasoft.com"
+					},
+					{
+						"key": "accept",
+						"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8"
+					},
+					{
+						"key": "cache-control",
+						"value": "max-age=0"
+					},
+					{
+						"key": "content-type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "cookie",
+						"value": "JSESSIONID=4A4FA5094CB5B39F7ACD4D9D781C1D3D; __q_state_toaWvavBpa9r2g42=eyJ1dWlkIjoiYjc0MjRhYzktY2MxOS00MjdiLWFmNDMtMTExYmE3ZWU2N2ExIiwiY29va2llRG9tYWluIjoicGFyYXNvZnQuY29tIn0="
+					},
+					{
+						"key": "origin",
+						"value": "https://parabank.parasoft.com"
+					},
+					{
+						"key": "referer",
+						"value": "https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "document"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "navigate"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "sec-fetch-user",
+						"value": "?1"
+					},
+					{
+						"key": "upgrade-insecure-requests",
+						"value": "1"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "totoajc2000",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "totoajc2000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://parabank.parasoft.com/parabank/login.htm",
+					"protocol": "https",
+					"host": [
+						"parabank",
+						"parasoft",
+						"com"
+					],
+					"path": [
+						"parabank",
+						"login.htm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Account by id",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "${{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "${{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "authority",
+						"value": "parabank.parasoft.com"
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8"
+					},
+					{
+						"key": "cookie",
+						"value": "JSESSIONID=4A4FA5094CB5B39F7ACD4D9D781C1D3D; __q_state_toaWvavBpa9r2g42=eyJ1dWlkIjoiYjc0MjRhYzktY2MxOS00MjdiLWFmNDMtMTExYmE3ZWU2N2ExIiwiY29va2llRG9tYWluIjoicGFyYXNvZnQuY29tIn0="
+					},
+					{
+						"key": "referer",
+						"value": "https://parabank.parasoft.com/parabank/overview.htm"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+					}
+				],
+				"url": {
+					"raw": "http://parabank.parasoft.com/parabank/services/bank/accounts/13899",
+					"protocol": "http",
+					"host": [
+						"parabank",
+						"parasoft",
+						"com"
+					],
+					"path": [
+						"parabank",
+						"services",
+						"bank",
+						"accounts",
+						"13899"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "${{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "${{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "parabank.parasoft.com"
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8"
+					},
+					{
+						"key": "content-length",
+						"value": "0"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json;charset=UTF-8"
+					},
+					{
+						"key": "cookie",
+						"value": "JSESSIONID=1C94CB8C8020E5DCBB156E442AC0778F; __q_state_toaWvavBpa9r2g42=eyJ1dWlkIjoiYjc0MjRhYzktY2MxOS00MjdiLWFmNDMtMTExYmE3ZWU2N2ExIiwiY29va2llRG9tYWluIjoicGFyYXNvZnQuY29tIn0="
+					},
+					{
+						"key": "origin",
+						"value": "https://parabank.parasoft.com"
+					},
+					{
+						"key": "referer",
+						"value": "https://parabank.parasoft.com/parabank/transfer.htm"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+					}
+				],
+				"url": {
+					"raw": "https://parabank.parasoft.com/parabank/services_proxy/bank/transfer?fromAccountId=13455&toAccountId=13455&amount=10",
+					"protocol": "https",
+					"host": [
+						"parabank",
+						"parasoft",
+						"com"
+					],
+					"path": [
+						"parabank",
+						"services_proxy",
+						"bank",
+						"transfer"
+					],
+					"query": [
+						{
+							"key": "fromAccountId",
+							"value": "13455"
+						},
+						{
+							"key": "toAccountId",
+							"value": "13455"
+						},
+						{
+							"key": "amount",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validate status code 200\", ()=>",
+							"{",
+							"    pm.response.to.have.status(200, \"incorrect status code\")",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "${{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "${{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "parabank.parasoft.com"
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8"
+					},
+					{
+						"key": "content-length",
+						"value": "0"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json;charset=UTF-8"
+					},
+					{
+						"key": "cookie",
+						"value": "JSESSIONID=23E779A82544E945C6C381F8DD523451"
+					},
+					{
+						"key": "origin",
+						"value": "https://parabank.parasoft.com"
+					},
+					{
+						"key": "referer",
+						"value": "https://parabank.parasoft.com/parabank/updateprofile.htm"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+					}
+				],
+				"url": {
+					"raw": "https://parabank.parasoft.com/parabank/services_proxy/bank/customers/update/13766?firstName=naman&lastName=upadhyay&street=test&city=test&state=test&zipCode=123456&phoneNumber=1234568890&ssn=123&username=naman&password=password123",
+					"protocol": "https",
+					"host": [
+						"parabank",
+						"parasoft",
+						"com"
+					],
+					"path": [
+						"parabank",
+						"services_proxy",
+						"bank",
+						"customers",
+						"update",
+						"13766"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "naman"
+						},
+						{
+							"key": "lastName",
+							"value": "upadhyay"
+						},
+						{
+							"key": "street",
+							"value": "test"
+						},
+						{
+							"key": "city",
+							"value": "test"
+						},
+						{
+							"key": "state",
+							"value": "test"
+						},
+						{
+							"key": "zipCode",
+							"value": "123456"
+						},
+						{
+							"key": "phoneNumber",
+							"value": "1234568890"
+						},
+						{
+							"key": "ssn",
+							"value": "123"
+						},
+						{
+							"key": "username",
+							"value": "naman"
+						},
+						{
+							"key": "password",
+							"value": "password123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apply For a Loan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () ",
+							"{",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202])",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "${{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "${{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "parabank.parasoft.com"
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8"
+					},
+					{
+						"key": "content-length",
+						"value": "0"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json;charset=UTF-8"
+					},
+					{
+						"key": "cookie",
+						"value": "JSESSIONID=23E779A82544E945C6C381F8DD523451"
+					},
+					{
+						"key": "origin",
+						"value": "https://parabank.parasoft.com"
+					},
+					{
+						"key": "referer",
+						"value": "https://parabank.parasoft.com/parabank/requestloan.htm"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+					}
+				],
+				"url": {
+					"raw": "https://parabank.parasoft.com/parabank/services_proxy/bank/requestLoan?customerId=13766&amount=50&downPayment=10&fromAccountId=16230",
+					"protocol": "https",
+					"host": [
+						"parabank",
+						"parasoft",
+						"com"
+					],
+					"path": [
+						"parabank",
+						"services_proxy",
+						"bank",
+						"requestLoan"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "13766"
+						},
+						{
+							"key": "amount",
+							"value": "50"
+						},
+						{
+							"key": "downPayment",
+							"value": "10"
+						},
+						{
+							"key": "fromAccountId",
+							"value": "16230"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
