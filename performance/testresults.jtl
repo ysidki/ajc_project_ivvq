@@ -1,0 +1,4 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1697057155880,1149,accessParabank,200,OK,Test performance 1-1,text,true,,6941,430,1,1,https://parabank.parasoft.com/parabank/index.htm;jsessionid=985BDF7252BE9FFD7321F9B05CA878A4,971,0,344
+1697057155880,973,accessParabank-0,302,Found,Test performance 1-1,text,true,,592,199,1,1,https://parabank.parasoft.com/parabank/?Accept-Encoding=gzip,971,0,344
+1697057156854,175,accessParabank-1,200,OK,Test performance 1-1,text,true,,6349,231,1,1,https://parabank.parasoft.com/parabank/index.htm;jsessionid=985BDF7252BE9FFD7321F9B05CA878A4,173,0,0

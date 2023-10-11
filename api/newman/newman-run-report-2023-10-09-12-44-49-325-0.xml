@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Squash_Get_Test_Cases" tests="9" time="3.077">
+  <testsuite name="Get Campain test plan" id="237f9945-f8a3-47b2-b2d0-3c152ea6c672" timestamp="2023-10-09T12:44:45.624Z" tests="0" failures="0" errors="0" time="0.239"/>
+  <testsuite name="create iteration" id="af479ddb-7a99-48e9-a680-28f1c79b9313" timestamp="2023-10-09T12:44:45.624Z" tests="0" failures="0" errors="0" time="2.561"/>
+  <testsuite name="create test plan iteration" id="c32481ff-89e9-4d20-992a-86b4a24e87ed" timestamp="2023-10-09T12:44:45.624Z" tests="1" failures="0" errors="0" time="0.030">
+    <testcase name="Status code is 201" time="0.014" classname="SquashGetTestCases"/>
+  </testsuite>
+  <testsuite name="create automted suite from iteration" id="e62d051b-0f3c-471e-96ce-3c79369b360a" timestamp="2023-10-09T12:44:45.624Z" tests="0" failures="0" errors="0" time="0.156"/>
+  <testsuite name="get executions" id="51e15e9c-8e43-4e9b-b862-2979965f4b20" timestamp="2023-10-09T12:44:45.624Z" tests="0" failures="0" errors="2" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: getaddrinfo ENOTFOUND gamera.serv.cdc.fr
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:71:26)
+
+---
+testScriptError: Unexpected token u in JSON at position 0
+---
+]]></system-err>
+  </testsuite>
+  <testsuite name="get execution info" id="a6123b0e-62d9-425d-ab20-708a363ecd5f" timestamp="2023-10-09T12:44:45.624Z" tests="0" failures="0" errors="2" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: getaddrinfo ENOTFOUND gamera.serv.cdc.fr
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:71:26)
+
+---
+testScriptError: Unexpected token u in JSON at position 0
+---
+]]></system-err>
+  </testsuite>
+</testsuites>

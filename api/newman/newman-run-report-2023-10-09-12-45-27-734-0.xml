@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Squash_Get_Test_Cases" tests="9" time="2.639">
+  <testsuite name="Get Campain test plan" id="863769b2-7d4f-4ac8-89f3-778303767a1a" timestamp="2023-10-09T12:45:24.313Z" tests="0" failures="0" errors="0" time="0.098"/>
+  <testsuite name="create iteration" id="8f9ec8b9-081b-4d3a-bf8e-d42096ed94f4" timestamp="2023-10-09T12:45:24.313Z" tests="0" failures="0" errors="0" time="0.018"/>
+  <testsuite name="create test plan iteration" id="db7f624a-0d89-4cec-b57f-55f99e19d463" timestamp="2023-10-09T12:45:24.313Z" tests="1" failures="0" errors="0" time="0.013">
+    <testcase name="Status code is 201" time="0.011" classname="SquashGetTestCases"/>
+  </testsuite>
+  <testsuite name="create automted suite from iteration" id="f4978739-9430-4c35-b1f3-bf61a021ab28" timestamp="2023-10-09T12:45:24.313Z" tests="0" failures="0" errors="0" time="0.030"/>
+  <testsuite name="get executions" id="7eefc1a9-6fcf-4470-b9ba-874276b641c9" timestamp="2023-10-09T12:45:24.313Z" tests="0" failures="0" errors="0" time="2.423"/>
+  <testsuite name="get execution info" id="a496f8aa-919e-4578-aa99-05e013ac9bfe" timestamp="2023-10-09T12:45:24.313Z" tests="0" failures="0" errors="0" time="0.020"/>
+</testsuites>

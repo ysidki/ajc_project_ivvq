@@ -1,0 +1,63 @@
+2023-10-11 22:46:44,683 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2023-10-11 22:46:44,696 INFO o.a.j.JMeter: Loading user properties from: C:\Users\yas\Downloads\apache-jmeter-5.6.2\apache-jmeter-5.6.2\bin\user.properties
+2023-10-11 22:46:44,697 INFO o.a.j.JMeter: Loading system properties from: C:\Users\yas\Downloads\apache-jmeter-5.6.2\apache-jmeter-5.6.2\bin\system.properties
+2023-10-11 22:46:44,701 INFO o.a.j.JMeter: Copyright (c) 1998-2023 The Apache Software Foundation
+2023-10-11 22:46:44,702 INFO o.a.j.JMeter: Version 5.6.2
+2023-10-11 22:46:44,702 INFO o.a.j.JMeter: java.version=11.0.20.1
+2023-10-11 22:46:44,702 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2023-10-11 22:46:44,702 INFO o.a.j.JMeter: os.name=Windows 11
+2023-10-11 22:46:44,702 INFO o.a.j.JMeter: os.arch=amd64
+2023-10-11 22:46:44,702 INFO o.a.j.JMeter: os.version=10.0
+2023-10-11 22:46:44,702 INFO o.a.j.JMeter: file.encoding=Cp1252
+2023-10-11 22:46:44,702 INFO o.a.j.JMeter: java.awt.headless=true
+2023-10-11 22:46:44,702 INFO o.a.j.JMeter: Max memory     =1073741824
+2023-10-11 22:46:44,702 INFO o.a.j.JMeter: Available Processors =16
+2023-10-11 22:46:44,708 INFO o.a.j.JMeter: Default Locale=English (EN)
+2023-10-11 22:46:44,708 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2023-10-11 22:46:44,708 INFO o.a.j.JMeter: JMeterHome=C:\Users\yas\Downloads\apache-jmeter-5.6.2\apache-jmeter-5.6.2
+2023-10-11 22:46:44,708 INFO o.a.j.JMeter: user.dir  =C:\Users\yas\workspace\pipepline_poc\performance
+2023-10-11 22:46:44,708 INFO o.a.j.JMeter: PWD       =C:\Users\yas\workspace\pipepline_poc\performance
+2023-10-11 22:46:49,635 INFO o.a.j.JMeter: IP: 192.168.56.1 Name: Yass FullName: Yass
+2023-10-11 22:46:49,645 INFO o.a.j.JMeter: Setting property 'jmeter.reportgenerator.outputdir' to:'C:\Users\yas\workspace\pipepline_poc\performance\report'
+2023-10-11 22:46:49,646 INFO o.a.j.s.FileServer: Default base='C:\Users\yas\workspace\pipepline_poc\performance'
+2023-10-11 22:46:49,647 INFO o.a.j.s.FileServer: Set new base='C:\Users\yas\workspace\pipepline_poc\performance'
+2023-10-11 22:46:49,788 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2023-10-11 22:46:49,799 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2023-10-11 22:46:49,801 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2023-10-11 22:46:49,804 INFO o.a.j.s.SaveService: Loading file: PerformanceTests.jmx
+2023-10-11 22:46:49,843 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2023-10-11 22:46:49,843 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2023-10-11 22:46:49,843 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2023-10-11 22:46:49,844 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2023-10-11 22:46:49,844 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2023-10-11 22:46:49,844 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2023-10-11 22:46:49,867 INFO o.a.j.JMeter: Creating summariser <summary>
+2023-10-11 22:46:49,875 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2023-10-11 22:46:49,875 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2023-10-11 22:46:49,875 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2023-10-11 22:46:49,882 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2023-10-11 22:46:49,882 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2023-10-11 22:46:50,085 INFO o.a.j.JMeter: Running test (1697057210085)
+2023-10-11 22:46:50,096 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Test performance
+2023-10-11 22:46:50,096 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Test performance.
+2023-10-11 22:46:50,097 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2023-10-11 22:46:50,097 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2023-10-11 22:46:50,100 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2023-10-11 22:46:50,100 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2023-10-11 22:46:50,104 INFO o.a.j.t.JMeterThread: Thread started: Test performance 1-1
+2023-10-11 22:46:50,114 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = Yass
+2023-10-11 22:46:50,119 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2023-10-11 22:46:50,120 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2023-10-11 22:46:50,120 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
+2023-10-11 22:46:50,120 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2023-10-11 22:46:50,120 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2023-10-11 22:46:50,192 INFO o.a.j.p.h.s.h.LazyLayeredConnectionSocketFactory: Setting up HTTPS TrustAll Socket Factory
+2023-10-11 22:46:50,197 INFO o.a.j.u.JsseSSLManager: Using default SSL protocol: TLS
+2023-10-11 22:46:50,197 INFO o.a.j.u.JsseSSLManager: SSL session context: per-thread
+2023-10-11 22:46:50,249 INFO o.a.j.u.SSLManager: JmeterKeyStore Location:  type JKS
+2023-10-11 22:46:50,251 INFO o.a.j.u.SSLManager: KeyStore created OK
+2023-10-11 22:46:50,251 WARN o.a.j.u.SSLManager: Keystore file not found, loading empty keystore
+2023-10-11 22:46:51,357 INFO o.a.j.t.JMeterThread: Thread is done: Test performance 1-1
+2023-10-11 22:46:51,357 INFO o.a.j.t.JMeterThread: Thread finished: Test performance 1-1
+2023-10-11 22:46:51,358 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2023-10-11 22:46:51,358 INFO o.a.j.r.Summariser: summary =      1 in 00:00:01 =    0.8/s Avg:  1179 Min:  1179 Max:  1179 Err:     0 (0.00%)
