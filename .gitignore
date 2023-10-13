@@ -1,0 +1,7 @@
+*.png
+report.xml
+output.xml
+log.xml
+*.jtl
+report.html
+log.html
